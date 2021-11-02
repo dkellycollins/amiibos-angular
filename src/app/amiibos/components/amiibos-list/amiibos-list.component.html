@@ -1,0 +1,9 @@
+<mat-list>
+  <app-amiibo-item
+    *ngFor="let amiibo of amiibos; trackBy: getAmiiboId"
+    [amiibo]="amiibo"
+    [collected]="amiibo.isCollected"
+    (collectedChanged)="onCollectedChanged(amiibo.slug, $event)"
+  >
+  </app-amiibo-item>
+</mat-list>

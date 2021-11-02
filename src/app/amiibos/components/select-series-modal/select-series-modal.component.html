@@ -1,0 +1,18 @@
+<div mat-dialog-title>
+  <mat-toolbar>
+    <span>Select a Series</span>
+    <button mat-button (click)="cancel()">
+      <mat-icon name="close"></mat-icon>
+    </button>
+  </mat-toolbar>
+</div>
+<mat-dialog-content>
+  <mat-list>
+    <mat-list-item lines="full" (click)="select(null)">
+      <span>All Series</span>
+    </mat-list-item>
+    <mat-list-item *ngFor="let s of series$ | async" lines="full" (click)="select(s)">
+      <span>{{s}}</span>
+      </mat-list-item>
+  </mat-list>
+</mat-dialog-content>
